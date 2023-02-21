@@ -18,3 +18,4 @@ copy: build
 	cp target/libem_proxy.a "$(SIDESTORE_REPO)/Dependencies/em_proxy"
 	cp target/libem_proxy-sim.a "$(SIDESTORE_REPO)/Dependencies/em_proxy"
 	cp em_proxy.h "$(SIDESTORE_REPO)/Dependencies/em_proxy"
+	touch "$(SIDESTORE_REPO)/Dependencies/.skip-prebuilt-fetch-em_proxy"
