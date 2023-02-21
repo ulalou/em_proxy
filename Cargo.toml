@@ -23,8 +23,5 @@ rand = { version = "*" }
 [build-dependencies]
 cbindgen = "0.20.0"
 
-[profile.release]
-panic = "abort"
-
 [lib]
 crate-type = ["staticlib"]
