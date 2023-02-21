@@ -15,8 +15,6 @@ build:
 copy: build
 	@echo SIDESTORE_REPO: $(SIDESTORE_REPO)
 
-	cp target/libem_proxy.a "$(SIDESTORE_REPO)/Dependencies/em_proxy.xcframework/ios-arm64"
-	cp em_proxy.h "$(SIDESTORE_REPO)/Dependencies/em_proxy.xcframework/ios-arm64/Headers"
-
-	cp target/libem_proxy-sim.a "$(SIDESTORE_REPO)/Dependencies/em_proxy.xcframework/ios-arm64_x86_64-simulator"
-	cp em_proxy.h "$(SIDESTORE_REPO)/Dependencies/em_proxy.xcframework/ios-arm64_x86_64-simulator/Headers"
+	cp target/libem_proxy.a "$(SIDESTORE_REPO)/Dependencies/em_proxy"
+	cp target/libem_proxy-sim.a "$(SIDESTORE_REPO)/Dependencies/em_proxy"
+	cp em_proxy.h "$(SIDESTORE_REPO)/Dependencies/em_proxy"
