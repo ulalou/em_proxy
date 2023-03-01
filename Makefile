@@ -36,19 +36,11 @@ clean:
 xcframework: build
 	@echo "xcframework"
 	xcodebuild -create-xcframework \
-			-library target/libem_proxy.a -headers ./ \
-			-library target/libem_proxy-sim.a -headers ./ \
+			-library target/aarch64-apple-ios/release/libem_proxy.a -headers ./ \
+			-library target/aarch64-apple-ios-sim/release/libem_proxy.a -headers ./ \
+			-library target/x86_64-apple-ios/release/libem_proxy.a -headers ./ \
 			-output em_proxy.xcframework
 
 zip: xcframework
 	@echo "zip"
 	zip -r em_proxy.xcframework.zip em_proxy.xcframework
-
-copy: build
-	@echo "copy"
-	@echo SIDESTORE_REPO: $(SIDESTORE_REPO)
-
-	cp target/libem_proxy.a "$(SIDESTORE_REPO)/Dependencies/em_proxy"
-	cp target/libem_proxy-sim.a "$(SIDESTORE_REPO)/Dependencies/em_proxy"
-	cp em_proxy.h "$(SIDESTORE_REPO)/Dependencies/em_proxy"
-	touch "$(SIDESTORE_REPO)/Dependencies/.skip-prebuilt-fetch-em_proxy"
