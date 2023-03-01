@@ -44,14 +44,15 @@ clean:
 
 xcframework: build
 	@echo "xcframework"
-	
+
 	@if [ -d "include" ]; then \
 		echo "cleaning include"; \
         rm -rf include; \
     fi
 	@mkdir include
-	@cp $(TARGET).h include
-	@cp module.modulemap include
+	@mkdir include/$(TARGET)
+	@cp $(TARGET).h include/$(TARGET)
+	@cp module.modulemap include/$(TARGET)
 
 	@if [ -d "$(TARGET).xcframework" ]; then \
 		echo "cleaning $(TARGET).xcframework"; \
@@ -67,14 +68,15 @@ xcframework: build
 
 xcframework_frameworks: build
 	@echo "xcframework_frameworks"
-	
+
 	@if [ -d "include" ]; then \
 		echo "cleaning include"; \
         rm -rf include; \
     fi
 	@mkdir include
-	@cp $(TARGET).h include
-	@cp module.modulemap include
+	@mkdir include/$(TARGET)
+	@cp $(TARGET).h include/$(TARGET)
+	@cp module.modulemap include/$(TARGET)
 
 	@if [ -d "target/ios" ]; then \
 		echo "cleaning target/ios"; \
@@ -96,7 +98,7 @@ xcframework_frameworks: build
 	@libtool -static \
 		-o target/ios/$(TARGET).framework/$(TARGET) \
 		target/lib$(TARGET)-ios.a
-	
+
 	@cp include/*.* target/sim/$(TARGET).framework/Headers
 	@xcrun \
 		-sdk iphonesimulator \
@@ -117,4 +119,8 @@ xcframework_frameworks: build
 
 zip: xcframework
 	@echo "zip"
+	@if [ -f "$(TARGET).xcframework.zip" ]; then \
+		echo "cleaning $(TARGET).xcframework.zip"; \
+        rm $(TARGET).xcframework.zip; \
+    fi
 	zip -r $(TARGET).xcframework.zip $(TARGET).xcframework
