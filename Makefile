@@ -19,7 +19,7 @@ build:
 
 	lipo -create \
 		-output target/libem_proxy-sim.a \
-		target/aarch64-apple-ios-sim/release/libem_proxy.a
+		target/aarch64-apple-ios-sim/release/libem_proxy.a \
 		target/x86_64-apple-ios/release/libem_proxy.a
 
 xcframework: build
