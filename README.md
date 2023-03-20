@@ -1,6 +1,8 @@
 # Emotional Mangling Proxy
 
-What Apple and I both share after this is done
+_What Apple and I both share after this is done_
+
+[![Build em_proxy](https://github.com/SideStore/em_proxy/actions/workflows/build.yml/badge.svg)](https://github.com/SideStore/em_proxy/actions/workflows/build.yml)
 
 ## What is EMP
 
