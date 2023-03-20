@@ -12,7 +12,9 @@ By modifying packets and retransmitting them back through a WireGuard tunnel
 
 ## How to build
 
-``cargo build --target aarch64-apple-ios``
+```sh
+cargo build --target aarch64-apple-ios
+```
 
 ## Publishing new release
 
@@ -22,10 +24,10 @@ This overwrites the last build on the tag `Build`.
 
 Either push a commit with `[build]` as the prefix for the commit message or push an empty commit with:
 
-```
+```sh
 git commit --allow-empty -m "[build]"
 ```
 
-## ETA wen
+## Progress
 
-June 2069
+![Alt](https://repobeats.axiom.co/api/embed/bb97132e96fd2c4caac60aa1441ae55b6382afec.svg "Repobeats analytics image")
