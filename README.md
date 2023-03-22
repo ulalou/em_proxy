@@ -11,4 +11,4 @@ By modifying packets and retransmitting them back through a WireGuard tunnel
 ``cargo build --target aarch64-apple-ios``
 
 ## ETA wen
-April 2069
+June 2069
