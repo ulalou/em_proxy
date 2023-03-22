@@ -35,11 +35,12 @@ jobs:
       - name: Build
         run: make build
 
-      - name: upload artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v3.1.0
-        name: test
-        path: |
-          em_proxy.xcframework.zip
-          em_proxy.h
-          target/libem_proxy.a
-          target/libem_proxy-sim.a
+        with:
+          name: test
+          path: |
+            em_proxy.xcframework.zip
+            em_proxy.h
+            target/libem_proxy.a
+            target/libem_proxy-sim.a
